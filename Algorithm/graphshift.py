@@ -13,8 +13,8 @@ from time import time
 
 import sys
 prob_thre = 1e-16
-dec_thre = 0.038
-num_vertex = 7455
+
+num_vertex = -1
 
 def makeInitCluster():
     adjacency_matrix = readW()
@@ -37,8 +37,8 @@ def fast_a_x_y(tmp_x_A, y):
 # implement equation 9
 # A: d*d, x: d*1
 def evolve_x(label, x, A, times):
-
     count = 0
+    dec_thre = 0.038
     while True:
         t0 = time()
         tmp_x_A = np.matmul(np.transpose(x), A)
@@ -67,6 +67,7 @@ def evolve_x(label, x, A, times):
 
 def is_mode(tmp_x_A, x, A):
     t0 = time()
+    global num_vertex
     g_x = a_x_y(tmp_x_A, x)
 
     for v_id in range(num_vertex):
@@ -80,6 +81,7 @@ def is_mode(tmp_x_A, x, A):
 
 # implement equation 10 and calculate s, zeta, omega
 def get_all_vertex_values(tmp_x_A, x, A):
+    global num_vertex
     vertex_vector = np.zeros((num_vertex, 1))
 
     g_x = a_x_y(tmp_x_A, x)
@@ -106,6 +108,7 @@ def get_all_vertex_values(tmp_x_A, x, A):
 # implement equation 12
 def compute_delta_x(tmp_x_A, x, A):
     s, t, vertex_vector = get_all_vertex_values(tmp_x_A, x, A)
+    global num_vertex
 
     delta_x = np.zeros((num_vertex,1))
     for v_id in range(num_vertex):
@@ -118,6 +121,7 @@ def compute_delta_x(tmp_x_A, x, A):
 
 def cluster():
     cluster_dict = defaultdict(set)
+    global num_vertex
     
     f = open('data/cluster_rst.txt')
     for line in f:
@@ -140,6 +144,8 @@ def readW():
 	W = data['dist']
 		
 	W = np.exp(-W)
+	global num_vertex
+	num_vertex = W.shape[0]
 	for vid in range(num_vertex):
 		W[vid, vid] = 0
 	
@@ -176,5 +182,3 @@ if __name__ == "__main__":
                 cluster_rst.write('%d %d\n' % (v_id, label))
                 vertex_set.add(v_id)
     cluster_rst.close()
-
-
