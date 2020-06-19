@@ -1,5 +1,5 @@
 
-function  BAC = runBAC(gt,pd)
+function  BAC = runBAC5(gt,pd)
 %gt = [1 0 1;
 %    0 1 0;
 %    1 0 0;
@@ -12,11 +12,11 @@ function  BAC = runBAC(gt,pd)
 uN = size(gt,1);
 nG = size(gt,2);
 
-BER = zeros(nG,1);
+BAC = zeros(nG,1);
 spt = sum(pd,1);
 [~,gidx] =sort(spt,2);
 
-ber_m = zeros(nG, nG);
+BAC_m = zeros(nG, nG);
 ttmax = zeros(nG, 1);
 
 for ii =1:nG  % each class in predict
@@ -29,13 +29,14 @@ for ii =1:nG  % each class in predict
         trueidx = find(lgt == 1);
         falseidx = find(lgt == 0);
         tmp = 1-0.5*(sum(lpd(trueidx) == 0)/length(trueidx) + sum(lpd(falseidx) == 1)/ length(falseidx));
-        ber_m(ii, jj) = tmp;
+        BAC_m(ii, jj) = tmp;
     end
     [tmax,idx] = max(tmp);
 end
 
-BAC = ber_m;
+BAC = BAC_m;
 %ttmax
+save('BAC.mat', 'BAC');
 [assignment,cost] = munkres(-BAC);
 [assignedrows,dum]=find(assignment);
 
@@ -45,10 +46,9 @@ idx = assignedrows';
 for i=1:length(idx),
     BAC(i) = tmp(idx(i),i);
 end
-
+mean(BAC);
 [Y,I] = sort(idx);
 BAC = BAC(I)';
-
 
 
 
@@ -194,4 +194,3 @@ end
 % Cost of assignment
 assignment(validRow,validCol) = starZ(1:nRows,1:nCols);
 cost = sum(costMat(assignment));
-
