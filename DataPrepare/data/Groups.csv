@@ -1,22 +1,23 @@
-groupName,groupID , #user , #user(+) , #image , #image(max) , #image(min) , #image(mean) 
-Light Flares,1153558@N25        ,772,151,5444,233,1,7
-Football Grounds,13846208@N00       ,1945,182,25477,1243,1,13
-Through glass in rain ,1733323@N23        ,332,65,1077,193,1,3
-Black & White Favorites  ,2260815@N22        ,1933,192,8436,277,1,4
-Get Closer  ,25271702@N00       ,1144,175,25926,1325,1,22
-Writing Machines,27475260@N00       ,2701,315,10974,2979,1,4
-Noir Film ,2878073@N21        ,247,39,1196,139,1,4
-Fog and Rain,2972754@N21        ,19,5,354,84,1,18
-window seat ,31814944@N00       ,549,97,14585,2675,1,26
-Stick figures ,35292492@N00       ,54,10,310,83,1,5
-Aesthetics failure  ,36521976979@N01    ,2863,432,11242,87,1,3
-Less is more ,37983109@N00       ,1921,302,45581,1495,1,23
-Field Guide: Birds of the World ,42637302@N00       ,5981,291,195296,4037,1,32
-Jumping Project,52241627704@N01    ,15576,912,47234,1022,1,3
-Movement,564892@N24         ,1701,274,23494,4809,1,13
-Night and light  ,564949@N21         ,2493,385,58619,1890,1,23
-Blue and orange ,60386832@N00       ,28,9,378,136,1,13
-Graphic Designer's photograph ,618703@N21         ,85,10,3907,1029,1,45
-Architectural Contrast  ,656786@N20         ,349,58,7682,527,1,22
-Colors!  ,87412648@N00       ,3430,535,135119,5638,1,39
-,,44123,,622331,,,
+groupName,groupID , #user , #user(+) , #image , #image(max) , #image(mean) 
+Light Flares,1153558@N25        ,772,151,5444,233,7
+Football Grounds,13846208@N00       ,1945,182,25477,1243,13
+Through glass in rain ,1733323@N23        ,332,65,1077,193,3
+Black & White Favorites  ,2260815@N22        ,1933,192,8436,277,4
+Get Closer  ,25271702@N00       ,1144,175,25926,1325,22
+Writing Machines,27475260@N00       ,2701,315,10974,2979,4
+Noir Film ,2878073@N21        ,247,39,1196,139,4
+Fog and Rain,2972754@N21        ,19,5,354,84,18
+window seat ,31814944@N00       ,549,97,14585,2675,26
+Stick figures ,35292492@N00       ,54,10,310,83,5
+Aesthetics failure  ,36521976979@N01    ,2863,432,11242,87,3
+Less is more ,37983109@N00       ,1921,302,45581,1495,23
+Field Guide: Birds of the World ,42637302@N00       ,5981,291,195296,4037,32
+Jumping Project,52241627704@N01    ,15576,912,47234,1022,3
+Movement,564892@N24         ,1701,274,23494,4809,13
+Night and light  ,564949@N21         ,2493,385,58619,1890,23
+Blue and orange ,60386832@N00       ,28,9,378,136,13
+Graphic Designer's photograph ,618703@N21         ,85,10,3907,1029,45
+Architectural Contrast  ,656786@N20         ,349,58,7682,527,22
+Colors!  ,87412648@N00       ,3430,535,135119,5638,39
+,,,,,,
+Note: 1. +user means the number of the overlapped users 2. the minimum number of photo for every user is one. This means the user contribute one to this group rather than he/she upload only one photo to Flickr. ,,,,,,
